@@ -21,7 +21,7 @@ body.mr{font-family:'Tiro Devanagari Marathi','Noto Serif Devanagari',serif}
 #pages{position:absolute;z-index:5;inset:0;overflow:hidden;touch-action:none}
 #track{height:100%;transition:transform .8s cubic-bezier(.65,0,.25,1);will-change:transform}
 #pages::-webkit-scrollbar{display:none}
-.page{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:.5rem;padding:14vh 9% 25vh;padding:14dvh 9% 25dvh;box-sizing:border-box;background-size:cover;background-position:center}
+.page{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:.5rem;padding:14vh 9% 25vh;padding:26dvh 9% 25dvh;box-sizing:border-box;background-size:cover;background-position:center}
 .r{opacity:0;transform:translateY(16px);transition:opacity .9s ease,transform .9s ease;transition-delay:calc(var(--i,0)*.14s)}
 .opened .page.in .r{opacity:1;transform:none}
 .small{font-size:.95rem;letter-spacing:.04em}
@@ -95,7 +95,7 @@ p{margin:0}
  <div class="r amp" style="--i:3">&amp;</div>
  <div class="r script names" style="--i:4" data-mr="तुषार">Tushar</div>
  <div class="r orn" style="--i:5">❖</div>
- <div class="r who" style="--i:6" data-mr="बुधवार, दि. २५ नोव्हेंबर २०२६">Wednesday, 25 November 2026</div>
+ <!-- <div class="r who" style="--i:6" data-mr="बुधवार, दि. २५ नोव्हेंबर २०२६">Wednesday, 25 November 2026</div> -->
  <div class="r hint small" style="--i:7" data-mr="वर स्वाइप करा ↓">Swipe up ↓</div>
 </section>
 
@@ -125,7 +125,8 @@ p{margin:0}
  <div class="r small gold" style="--i:1" data-mr="बुधवार, दि. २५ नोव्हेंबर २०२६">Wednesday, 25 November 2026</div>
  <div class="r tl" style="--i:2">
   <div><b>6:00 PM</b><span data-mr="स्वागत समारंभास सुरुवात, पाहुण्यांचे स्वागत">Reception begins, guests are welcomed</span></div>
-  <div><b>6:00 – 9:00 PM</b><span data-mr="स्नेहभोजन व आनंदोत्सव">Affectionate dinner &amp; celebrations</span></div>
+  <div><b>6:00 - 7:00 PM</b><span data-mr="अल्पोपहार व स्टार्टर">Refreshments and starters</span></div>
+  <div><b>7:00 – 9:00 PM</b><span data-mr="स्नेहभोजन व आनंदोत्सव">Affectionate dinner &amp; celebrations</span></div>
   <div><b>9:00 PM</b><span data-mr="समारंभाची सांगता">Reception concludes</span></div>
  </div>
 </section>
@@ -141,8 +142,8 @@ p{margin:0}
 
 <section class="page">
  <h2 class="r script" data-mr="आपले स्नेहांकित">With Love</h2>
- <div class="r who" style="--i:1" data-mr="श्री. विद्याधर तुकाराम भिंगार्डे<span>सौ. स्मिता विद्याधर भिंगार्डे</span>">Shri Vidyadhar Tukaram Bhingarde<span>Smt. Smita Vidyadhar Bhingarde</span></div>
- <div class="r orn small" style="--i:2" data-mr="वरील विनंतीस मान देऊन अगत्य येण्याची कृपा करावी">Kindly honour this request and do attend</div>
+<div class="r who" style="--i:1; font-size: x-large;" data-mr="श्री. विद्याधर तुकाराम भिंगार्डे&lt;span style='font-size: x-large; font-weight: 700;'&gt;सौ. स्मिता विद्याधर भिंगार्डे&lt;/span&gt;">Shri Vidyadhar Tukaram Bhingarde<span style="font-size: x-large; font-weight: 700;">Smt. Smita Vidyadhar Bhingarde</span></div> 
+<div class="r orn small" style="--i:2" data-mr="वरील विनंतीस मान देऊन अगत्य येण्याची कृपा करावी">Kindly honour this request and do attend</div>
  <p class="r" style="--i:3" data-mr="श्री. विनायक तुकाराम भिंगार्डे · सौ. सिद्धी विनायक भिंगार्डे<br>श्री. सुनिल मधुकर डोळस · सौ. सुप्रिया सुनिल डोळस">Shri Vinayak Tukaram Bhingarde &amp; Smt. Siddhi Vinayak Bhingarde<br>Shri Sunil Madhukar Dolas &amp; Smt. Supriya Sunil Dolas</p>
  <div class="r who" style="--i:4" data-mr="समस्त भिंगार्डे परिवार व डोळस परिवार">All the Bhingarde &amp; Dolas families</div>
 </section>
@@ -151,9 +152,9 @@ p{margin:0}
 <div id="gate">
  <div class="door dl"><div class="di"></div></div><div class="door dr"><div class="di"></div></div>
  <div class="gc">
-  <div class="small" data-mr="॥ श्री गणेशाय नमः ॥">॥ Shri Ganeshaya Namah ॥</div>
+  <!-- <div class="small" data-mr="॥ श्री गणेशाय नमः ॥">॥ Shri Ganeshaya Namah ॥</div>
   <div class="script" data-mr="वैष्णवी &amp; तुषार">Vaishnavi &amp; Tushar</div>
-  <div data-mr="स्वागत समारंभ निमंत्रण">Wedding reception invitation</div>
+  <div data-mr="स्वागत समारंभ निमंत्रण">Wedding reception invitation</div> -->
   <button id="seal" data-mr="उघडा">TAP TO OPEN</button>
  </div>
 </div>
