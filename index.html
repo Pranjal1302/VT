@@ -174,10 +174,24 @@ function setLang(l){$$('[data-mr]').forEach(e=>e.innerHTML=l=='mr'?e.dataset.mr:
 $('#lang').onclick=()=>setLang($('#lang').dataset.l=='mr'?'en':'mr');
 // petals
 for(let i=0;i<9;i++){const p=document.createElement('span');p.style.left=Math.random()*100+'%';p.style.animationDuration=9+Math.random()*8+'s';p.style.animationDelay=-Math.random()*14+'s';p.style.transform='scale('+(.7+Math.random()*.7)+')';$('#petals').appendChild(p)}
-// soft music (generated, no files)
-let ac,on=false,timer;const sc=[261.6,293.7,329.6,392,440,523.3,587.3];
-function tick(){const t=ac.currentTime,o=ac.createOscillator(),g=ac.createGain();o.frequency.value=sc[Math.random()*sc.length|0]*(Math.random()<.3?.5:1);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.06,t+.08);g.gain.exponentialRampToValueAtTime(.0001,t+2.2);o.connect(g).connect(ac.destination);o.start(t);o.stop(t+2.3)}
-function music(v){try{if(v){ac=ac||new(window.AudioContext||window.webkitAudioContext)();ac.resume();tick();timer=setInterval(tick,1300)}else clearInterval(timer);on=v;$('#snd').textContent=v?'🔊':'🔇'}catch(e){}}
+// Wedding background song (the MP3 file must sit beside this HTML file)
+let on=false;
+const weddingSong = new Audio('./wedding-song.mp3');
+weddingSong.loop = true;
+weddingSong.preload = 'auto';
+weddingSong.volume = 0.55;
+function music(v){
+  if(v){
+    const result = weddingSong.play();
+    if(result && result.catch) result.catch(()=>{ on=false; $('#snd').textContent='🔇'; });
+    on=true;
+    $('#snd').textContent='🔊';
+  } else {
+    weddingSong.pause();
+    on=false;
+    $('#snd').textContent='🔇';
+  }
+}
 $('#snd').onclick=()=>music(!on);
 // gate doors reuse the theme artwork (split in two)
 const art=getComputedStyle($('.bg')).backgroundImage;$$('.di').forEach(d=>d.style.backgroundImage=art);$$('.page').forEach(d=>d.style.backgroundImage=art);$('.bg').style.display='none';
