@@ -182,6 +182,10 @@ weddingSong.preload = 'auto';
 weddingSong.volume = 0.55;
 function music(v){
   if(v){
+    if(weddingSong.paused){
+      weddingSong.currentTime = 10;
+    }
+
     const result = weddingSong.play();
     if(result && result.catch) result.catch(()=>{ on=false; $('#snd').textContent='🔇'; });
     on=true;
